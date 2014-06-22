@@ -2,9 +2,10 @@ Getting & Cleaning Data
 =======================
 
 This is my implementation of the project from the Coursera Training - Getting and Cleaning Data.  This project contains the following deliverables:
-* run_analysis.R; this is the R script that will merge the various datasets provided by Coursera. The script also transform and produces a tidy dataset as per the specifications provided
-* CodeBook.md; this is a markdown file that modifies and updates the codebooks contained in the original datasets provided; it indicates all the variables and summaries calculated, along with units, and any other relevant information 
-* tidy_dataset.csv; this is the resulting dataset.
+
+* [run_analysis.R](run_analysis.R); this is the R script that will merge the various datasets provided by Coursera. The script also transform and produces a tidy dataset as per the specifications provided
+* [CodeBook.md](CodeBook.md); this is a markdown file that modifies and updates the codebooks contained in the original datasets provided; it indicates all the variables and summaries calculated, along with units, and any other relevant information 
+* [tidy_dataset.csv](tidy_dataset.csv); this is the resulting dataset.
 
 The remaining of this document will describe the [run_analysis.R](run_analysis.R) script.
 
@@ -17,7 +18,7 @@ Overall Structure
 The overall structure of the script is as follows:
 
 1. Import the activity labels and the features descriptions
-2. Identify the columns and feature names that corresponds to mean() and std()
+2. Identify the columns and feature names that corresponds to mean() and std() measurements
 3. Import test datasets (measurements, subjects, activities), and name the columns 
 4. Same as 3. but with training datasets
 5. Merge test and training datasets, by using `rbind()` the training datasets rows after the test datasets rows
@@ -28,4 +29,7 @@ The overall structure of the script is as follows:
 
 Additional Notes
 ------------
-The feature names contain `-` and `()` characters that cannot be used within column names. Therefore I have removed this punctuations symbols; in order to remove all punctuations I have used the function `gsub("[[:punc:]]", "", features$Feature.name)`.
+The feature names contain `-`, `(` and `)` characters. These characters cannot be used within column names. Therefore I have removed these punctuations symbols; I have used the function `gsub("[[:punc:]]", "", features$Feature.name)`.
+
+The dataset used in this project is referred in the following publication:
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
