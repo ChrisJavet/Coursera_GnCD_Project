@@ -16,15 +16,15 @@ Overall Structure
 -----------
 The overall structure of the script is as follows:
 
-1.  Import the activity labels and the features descriptions
-2.  Identify the columns and feature names that corresponds to mean() and std()
-3.  Import test datasets (measurements, subjects, activities), and name the columns 
-4.  Same as 3. but with training datasets
-5.  Merge test and training datasets, by using `rbind()` the training datasets rows after the test datasets rows
-6.  Create a new dataset containing the measurements, subjects and activites, by using the `cbind()` to append the datasets as columns
-7.  Add a new column containing the activity name, by using `merge()` and joining on the `Activity.number` column name defined in 1. and 3.
-8.  Create a new dataset that list for each Subject and Activity the `mean()` value of the measurements; this is computed with a `melt()` function to have id and variables separated, and then using the `dcast()` function to apply the `mean()` function on the resulting measurement.
-9.  Write the tidy dataset to disk
+1. Import the activity labels and the features descriptions
+2. Identify the columns and feature names that corresponds to mean() and std()
+3. Import test datasets (measurements, subjects, activities), and name the columns 
+4. Same as 3. but with training datasets
+5. Merge test and training datasets, by using `rbind()` the training datasets rows after the test datasets rows
+6. Create a new dataset containing the measurements, subjects and activites, by using the `cbind()` to append the datasets as columns
+7. Add a new column containing the activity name, by using `merge()` and joining on the `Activity.number` column name defined in 1. and 3.
+8. Create a new dataset that list for each Subject and Activity the `mean()` value of the measurements; this is computed with a `melt()` function to have id and variables separated, and then using the `dcast()` function to apply the `mean()` function on the resulting measurement.
+9. Write the tidy dataset to disk
 
 Additional Notes
 ------------
