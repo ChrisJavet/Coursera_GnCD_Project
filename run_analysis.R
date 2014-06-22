@@ -49,3 +49,7 @@ temporary_dataset <- melt(data = merged_dataset_and_activityname_extract,
                           id = c("Subject", "Activity.name"), 
                           measure.vars = features_columns_names)
 tidy_dataset <- dcast(temporary_dataset, Subject + Activity.name ~ variable, mean)
+
+## Write the tidy_dataset on to disk
+write.csv(tidy_dataset, file = "tidy_dataset.csv")
+
