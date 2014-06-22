@@ -15,6 +15,7 @@ In order for the script to read and produce the tidy_dataset file, the directory
 Overall Structure
 -----------
 The overall structure of the script is as follows:
+
 1.  Import the activity labels and the features descriptions
 2.  Identify the columns and feature names that corresponds to mean() and std()
 3.  Import test datasets (measurements, subjects, activities), and name the columns 
